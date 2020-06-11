@@ -11,8 +11,8 @@
     if(isset($id) && isset($uname) && $token == "BQeUGUMB5QnhKXUe"){
         $joinMeeting->join_meeting($id, $uname, $pword);
     } else {
-        echo "No";
+        echo "Your Token is Incorrect or the ID and Username are missing";
     }
-    
+
 // localhost:8080/bbb-api-hook/api.php?meetingID=CGXsYSa59GXOzWXdZqri1WI3SBoq11&firstname=Smith&token=BQeUGUMB5QnhKXUe
 ?>
