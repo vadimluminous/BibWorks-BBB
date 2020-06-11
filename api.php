@@ -1,18 +1,18 @@
 <?php
-require 'vendor/autoload.php';
-require 'functions/authentication.php';
-require 'functions/getid.php';
-require 'functions/bbb-class.php';
+    require 'functions/bbb-class.php';
 
+    $joinMeeting = new Bigbluebutton_Api();
 
-$joinMeeting = new Bigbluebutton_Api();
+    $id = htmlspecialchars($_GET['meetingID'], ENT_QUOTES);
+    $uname = htmlspecialchars($_GET['firstname'], ENT_QUOTES);
+    $token = htmlspecialchars($_GET['token'], ENT_QUOTES);
+    $pword = '123';
 
-$id = get_id($_GET['meetingID']);
-$uname = $_GET['firstname'];
-
-$pword = '123';
-
-
-if(isset($id)){
-    $joinMeeting->join_meeting($id, $uname, $pword);
-}
+    if(isset($id) && isset($uname) && $token == "BQeUGUMB5QnhKXUe"){
+        $joinMeeting->join_meeting($id, $uname, $pword);
+    } else {
+        echo "No";
+    }
+    
+// localhost:8080/bbb-api-hook/api.php?meetingID=CGXsYSa59GXOzWXdZqri1WI3SBoq11&firstname=Smith&token=BQeUGUMB5QnhKXUe
+?>
