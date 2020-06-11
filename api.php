@@ -1,4 +1,5 @@
 <?php
+echo "yo";
 require 'vendor/autoload.php';
 require 'functions/authentication.php';
 require 'functions/getid.php';
